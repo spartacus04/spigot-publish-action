@@ -33,6 +33,7 @@ RUN pnpm i --prod
 RUN apk del .gyp
 
 COPY --from=build /usr/src/app/dist ./dist
-COPY resources ./resources
 
-CMD ["node", "dist/index.js"]
+RUN apk add --no-cache udev ttf-freefont chromium
+
+CMD ["node", "/usr/src/app/dist/index.js"]

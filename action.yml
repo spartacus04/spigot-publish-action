@@ -13,11 +13,14 @@ inputs:
   OTP_SECRET:
     description: 'The TOTP secret used to login to spigot'
     required: true
-  EXTERNAL_DOWNLOAD_URL:
-    description: 'The link that should be set as the external download url'
-    required: false
-  FILE_PATH:
-    description: 'The path to the file that should be uploaded as the plugin file'
+  DOWNLOAD_URL:
+    description: 'Download url for the plugin'
+    required: true
+  IS_FILE:
+    description: 'Whether the download url is a file or not'
+    required: true
+  FILE_NAME:
+    description: 'The file name of the uploaded file'
     required: false
   VERSION:
     description: 'The version set for the plugin update'

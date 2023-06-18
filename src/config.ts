@@ -3,9 +3,11 @@ export const {
 	EMAIL,
 	PASSWORD,
 	OTP_SECRET,
-	EXTERNAL_DOWNLOAD_URL,
-	FILE_PATH,
+	DOWNLOAD_URL,
+	IS_FILE,
+	FILE_NAME,
 	VERSION,
 	TITLE,
 	DESCRIPTION,
-} = process.env
+	NODE_ENV,
+} = process.env;

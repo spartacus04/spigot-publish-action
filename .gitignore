@@ -7,3 +7,4 @@ dist/
 logs
 pnpm-lock.yaml
 error.png
+.github/workflows/test.yml
