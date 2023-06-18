@@ -1,0 +1,1 @@
+# spigot-publish-action
