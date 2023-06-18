@@ -1,0 +1,38 @@
+{
+  "name": "spigot-deploy",
+  "version": "1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --poll --clear -P tsconfig.json src/index.ts",
+    "dev:docker": "docker compose -f docker-compose.dev.yml up",
+    "start": "npm run build && node dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "build": "tsc",
+    "build:docker": "docker build . -t spigot-deploy"
+  },
+  "keywords": [],
+  "author": "spartacus04",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.2.0",
+    "@types/totp-generator": "^0.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "dotenv": "^16.2.0",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "5.2.0-dev.20230618"
+  },
+  "dependencies": {
+    "@destinationstransfers/ntp": "^2.0.0",
+    "ntpclient": "^1.4.1",
+    "puppeteer": "^20.7.2",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "totp-generator": "^0.0.14"
+  }
+}

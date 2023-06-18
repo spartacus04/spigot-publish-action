@@ -1,0 +1,9 @@
+*.log
+.env
+node_modules/
+package-lock.json
+.vscode/
+dist/
+logs
+pnpm-lock.yaml
+error.png
