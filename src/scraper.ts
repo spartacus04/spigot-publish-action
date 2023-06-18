@@ -6,6 +6,7 @@ import { PuppeteerLaunchOptions } from 'puppeteer';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { DESCRIPTION, EMAIL, DOWNLOAD_URL, IS_FILE, NODE_ENV, OTP_SECRET, PASSWORD, TITLE, UPDATE_PAGE, VERSION, FILE_NAME } from './config';
 import { generateOTP, wait } from './utils';
+import './parameters';
 
 puppeteer.use(StealthPlugin());
 
@@ -46,10 +47,6 @@ puppeteer.launch(config).then(async browser => {
 		await page.waitForNavigation({ waitUntil: 'networkidle2' });
 
 		console.log('Logged in');
-
-		if(!DOWNLOAD_URL) {
-			throw new Error('No download url provided');
-		}
 
 		if(IS_FILE) {
 			console.log('Uploading file...');

@@ -2,7 +2,7 @@ name: 'Spigot publish action'
 description: 'Publishes a Spigot plugin to SpigotMC'
 inputs:
   UPDATE_PAGE:
-    description: 'The full spigot update page url'
+    description: 'The full spigot update page url (Example: https://www.spigotmc.org/resources/infinite-villager-trades.88098/add-version)'
     required: true
   EMAIL:
     description: 'The email used to login to spigot'
@@ -11,16 +11,16 @@ inputs:
     description: 'The password used to login to spigot'
     required: true
   OTP_SECRET:
-    description: 'The TOTP secret used to login to spigot'
+    description: 'The TOTP secret used to login to spigot (The one you inputed when you enabled 2FA) (Don't worry you can use both the 2FA and the github action)'
     required: true
   DOWNLOAD_URL:
-    description: 'Download url for the plugin'
+    description: 'Download url for the plugin. This can either be a link to a file or a link to a github release.'
     required: true
   IS_FILE:
-    description: 'Whether the download url is a file or not'
+    description: 'Whether the download url is a file link or a github release link.'
     required: true
   FILE_NAME:
-    description: 'The file name of the uploaded file'
+    description: 'The file name of the uploaded file (Only needed when IS_FILE is true)'
     required: false
   VERSION:
     description: 'The version set for the plugin update'
@@ -30,7 +30,7 @@ inputs:
     required: true
   DESCRIPTION:
     description: 'The description set for the plugin update'
-    required: true
+    required: false
 
 runs:
   using: 'docker'
